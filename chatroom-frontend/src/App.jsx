@@ -24,7 +24,7 @@ const ChatApp = () => {
   const commonEmojis = ['😀', '😃', '😄', '😁', '😆', '🥹', '😊', '😇', '🙂', '🙃', '😉', '😌', '😍', '🥰', '😘', '😗', '😙', '😚', '😋', '😛', '😝', '😜', '🤪', '🤨', '🧐', '🤓', '😎', '🥸', '🤩', '🥳', '😏', '😒', '😞', '😔', '😟', '😕', '🙁', '☹️', '😣', '😖', '😫', '😩', '🥺', '😢', '😭', '😤', '😠', '😡', '🤬', '🤯', '😳', '🥵', '🥶', '😱', '😨', '😰', '😥', '😓', '🤗', '🤔', '🤭', '🤫', '🤥', '😶', '😐', '😑', '😬', '🙄', '😯', '😦', '😧', '😮', '😲', '🥱', '😴', '🤤', '😪', '😵', '🤐', '🥴', '🤢', '🤮', '🤧', '😷', '🤒', '🤕', '🤑', '🤠', '😈', '👿', '👹', '👺', '🤡', '💩', '👻', '💀', '☠️', '👽', '👾', '🤖', '🎃', '😺', '😸', '😹', '😻', '😼', '😽', '🙀', '😿', '😾', '❤️', '🧡', '💛', '💚', '💙', '💜', '🖤', '🤍', '🤎', '💔', '❣️', '💕', '💞', '💓', '💗', '💖', '💘', '💝', '💟', '👍', '👎', '👌', '🤌', '🤏', '✌️', '🤞', '🤟', '🤘', '🤙', '👈', '👉', '👆', '🖕', '👇', '☝️', '👋', '🤚', '🖐️', '✋', '🖖', '👏', '🙌', '🤲', '🤝', '🙏', '✍️', '💪', '🦾', '🦿', '🦵', '🦶', '👂', '🦻', '👃', '🧠', '🫀', '🫁', '🦷', '🦴', '👀', '👁️', '👅', '👄', '💋', '🔥', '⭐', '✨', '💫', '⚡', '💥', '💢', '💨', '💦', '💤', '🎉', '🎊'];
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://kuvaka-backend-5jl5.onrender.com');
     setSocket(newSocket);
 
     // Check if we're accessing a room via URL
@@ -115,7 +115,7 @@ const ChatApp = () => {
 
   const loadMessages = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/rooms/${roomId}/messages`);
+      const response = await fetch(`https://kuvaka-backend-5jl5.onrender.com/api/rooms/${roomId}/messages`);
       const data = await response.json();
       if (data.success) {
         setMessages(data.messages);
@@ -135,7 +135,7 @@ const ChatApp = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/rooms/create', {
+      const response = await fetch('https://kuvaka-backend-5jl5.onrender.com/api/rooms/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -168,7 +168,7 @@ const ChatApp = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/rooms/${roomId}`);
+      const response = await fetch(`https://kuvaka-backend-5jl5.onrender.com/api/rooms/${roomId}`);
       const data = await response.json();
       
       if (!data.success) {
