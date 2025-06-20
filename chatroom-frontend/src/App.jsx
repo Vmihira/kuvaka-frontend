@@ -217,7 +217,7 @@ const ChatApp = () => {
   };
 
   const copyLink = () => {
-    const link = generatedLink || `https://kuvaka-frontend-nine.vercel.app//room/${roomId}`;
+    const link = generatedLink || `https://kuvaka-frontend-nine.vercel.app/room/${roomId}`;
     navigator.clipboard.writeText(link);
     alert('Link copied to clipboard!');
   };
