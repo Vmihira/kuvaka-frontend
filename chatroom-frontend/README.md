@@ -1,12 +1,45 @@
-# React + Vite
+Nexus Chat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A real-time group chat application using React, Node.js, Express and MongoDB.
 
-Currently, two official plugins are available:
+Live Application -> https://kuvaka-frontend-nine.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+Frontend Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Open a new terminal and go to the frontend folder:
+
+   cd chatroom-frontend
+   
+
+2. Install dependencies:
+
+   npm install
+
+
+3. Start the frontend:
+
+bash
+   npm run dev
+
+   Runs on: http://localhost:5173
+
+How It Works
+
+Users can create or join rooms.
+Each room has a unique link.
+Messages are sent and received in real-time using WebSockets.
+Active users, typing indicators, and participants are shown live.
+Messages are stored in MongoDB and loaded on room join.
+
+Design Decisions
+
+ Unique room links.
+ Messages stored per room.
+ Emoji picker for enhanced user interaction.
+
+Deployment Links
+
+Frontend:[https://kuvaka-frontend-nine.vercel.app]
+
+Backend:[https://kuvaka-backend-5jl5.onrender.com]
